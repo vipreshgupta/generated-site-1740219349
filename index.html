@@ -1,0 +1,221 @@
+To develop a restaurant reservation web app with online ordering capabilities, I'll create a single HTML file that includes embedded CSS and JavaScript. The app will feature a user-friendly interface with a cohesive color scheme, responsive design, and accessible elements. Here's the code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Haven - Reservations & Ordering</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #f39c12;
+            --text-color: #333;
+            --background-color: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#reservations">Reservations</a></li>
+                    <li><a href="#order">Order Online</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="home">
+                <h1>Welcome to Gourmet Haven</h1>
+                <p>Experience exquisite dining and seamless ordering at your fingertips.</p>
+                <a href="#reservations" class="cta-button">Make a Reservation</a>
+            </section>
+
+            <section id="reservations">
+                <h2>Make a Reservation</h2>
+                <form id="reservation-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
+
+                    <label for="guests">Number of Guests:</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+
+                    <button type="submit">Reserve Now</button>
+                </form>
+            </section>
+
+            <section id="order">
+                <h2>Order Online</h2>
+                <p>Browse our menu and place your order for pickup or delivery.</p>
+                <a href="#" class="cta-button">View Menu & Order</a>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Reservation submitted successfully! We will confirm your booking shortly.');
+            this.reset();
+        });
+
+        // Add smooth scrolling to nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+```
+
+This code creates a basic restaurant reservation web app with the following features:
+
+1. **Color Scheme**: Uses a cohesive color palette with primary, secondary, and accent colors that can be easily customized using CSS variables.
+
+2. **Layout**: Implements a clear navigation structure and organizes content into distinct sections for easy browsing.
+
+3. **Responsiveness**: Utilizes responsive design techniques to ensure the app looks good on various screen sizes.
+
+4. **Accessibility**: Uses semantic HTML elements and provides labels for form inputs to enhance accessibility.
+
+5. **Interactive Elements**: Includes a reservation form with real-time feedback (alert on submission) and smooth scrolling navigation.
+
+To further enhance this app, you could:
+
+1. Implement a more sophisticated reservation system with date/time validation and availability checking.
+2. Add an interactive menu display for online ordering.
+3. Integrate with a backend system for storing reservations and orders.
+4. Enhance accessibility by adding ARIA attributes and ensuring proper keyboard navigation.
+5. Implement additional features like user accounts, order tracking, and push notifications.
+
+Remember to test the app thoroughly across different devices and browsers, and consider conducting user testing to gather feedback for continuous improvement.
